@@ -24,7 +24,7 @@ const FacialSovosContextProvider = ({ children }) => {
     };
 
     useEffect(() => {
-       // SessionManager()
+        SessionManager()
     }, [])
 
     return (
