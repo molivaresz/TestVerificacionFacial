@@ -12,7 +12,7 @@ const Home = () => {
             session_id: IdSesion,
             document_type: "CHL2",
             document_side: "front",
-            callback: function(captured_token, image){ alert(token); },
+            callback: function(captured_token, image){ alert(captured_token); },
             failure: function(error){ alert(error); }
         });
         } catch (error) {
