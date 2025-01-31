@@ -23,9 +23,9 @@ const Home = () => {
     return (
     <>
     <div className='col container-fluid d-flex pt-5 ps-5'>
-        <h1>AUTOCAPTURA</h1>
         <form>
             <div className="mb-3">
+                <h2>AUTOCAPTURA</h2>
                 <label className="form-label">ID Sesion</label>
                 <input type="text" className="form-control" id="IdSesion" />
                 <label className="form-label">Token Front</label>
@@ -33,7 +33,7 @@ const Home = () => {
                 <label className="form-label">Token Back</label>
                 <input type="text" className="form-control" id="Tback" />
             </div>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-outline-primary p-2">Captura Front</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-outline-primary m-2">Captura Front</button>
             <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"back")} className="btn btn-outline-info">Captura Back</button>
         </form>    
     </div>
