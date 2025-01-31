@@ -53,8 +53,6 @@ const Home = () => {
         <form>
             <div className="mb-3">
                 <h2>LIVENESS</h2>
-                <label className="form-label">ID Sesion</label>
-                <input type="text" className="form-control" id="IdSesion" />
                 <label className="form-label">Token Liveness</label>
                 <input type="text" className="form-control" id="Tliveness" />
             </div>
