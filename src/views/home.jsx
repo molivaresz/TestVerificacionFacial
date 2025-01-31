@@ -47,8 +47,8 @@ const Home = () => {
                 <label className="form-label">Token Back</label>
                 <input type="text" className="form-control" id="Tback" />
             </div>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-outline-Primary m-2">Captura Front</button>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"back")} className="btn btn-outline-Warning">Captura Back</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-outline-primary m-2">Captura Front</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"back")} className="btn btn-outline-warning">Captura Back</button>
         </form>    
         <form>
             <div className="mb-3">
@@ -58,7 +58,7 @@ const Home = () => {
                 <label className="form-label">Token Liveness</label>
                 <input type="text" className="form-control" id="Tliveness" />
             </div>
-            <button type="button" onClick={() => Selfie(document.getElementById("IdSesion").value)} className="btn btn-outline-Info m-2">Liveness</button>
+            <button type="button" onClick={() => Selfie(document.getElementById("IdSesion").value)} className="btn btn-outline-info m-2">Liveness</button>
         </form>
     </div>
 
