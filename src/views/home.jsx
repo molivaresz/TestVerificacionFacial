@@ -8,12 +8,12 @@ const Home = () => {
     const CapturaDoc = async (IdSesion,caracedula) => {
         try {
             TOCautocapture('containerautocaptura', {
-            locale: "es",
-            session_id: IdSesion,
-            document_type: "CHL2",
-            document_side: caracedula,
-            callback: function(captured_token, image){ caracedula == "front" ? document.getElementById("Tfront").value = captured_token : document.getElementById("Tback").value = captured_token },
-            failure: function(error){ alert(error); }
+                locale: "es",
+                session_id: IdSesion,
+                document_type: "CHL2",
+                document_side: caracedula,
+                callback: function(captured_token, image){ caracedula == "front" ? document.getElementById("Tfront").value = captured_token : document.getElementById("Tback").value = captured_token },
+                failure: function(error){ alert(error); }
         });
         } catch (error) {
             console.log(error);
@@ -22,11 +22,11 @@ const Home = () => {
 
     const Selfie = async (IdSesion) => {
         try {
-            TOCautocapture('containerautocaptura', {
-            locale: "es",
-            session_id: IdSesion,
-            callback: function(liveness_token, image){ document.getElementById("Tliveness").value = liveness_token },
-            failure: function(error){ alert(error); }
+            TOCliveness('containerautocaptura', {
+                locale: "es",
+                session_id: IdSesion,
+                callback: function(liveness_token){ document.getElementById("Tliveness").value = liveness_token },
+                failure: function(error){ alert(error); }
         });
         } catch (error) {
             console.log(error);
