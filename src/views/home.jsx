@@ -10,7 +10,7 @@ const Home = () => {
         try {
             TOCautocapture('containerautocaptura', {
             locale: "es",
-            session_id: "SESSION ID HERE",
+            session_id: "7027fe5498654b9e956ec32a649d2de4",
             document_type: "CHL2",
             document_side: "front",
             callback: function(captured_token, image){ alert(token); },
