@@ -5,14 +5,14 @@ const Home = () => {
     //const [dataCapturedToken, setDataCapturedToken] = useState("")
     //const [dataImage, setDataImage] = useState("")
 
-    const CapturaDoc = async (IdSesion) => {
+    const CapturaDoc = async (IdSesion,caracedula) => {
         try {
             TOCautocapture('containerautocaptura', {
             locale: "es",
             session_id: IdSesion,
             document_type: "CHL2",
-            document_side: "front",
-            callback: function(captured_token, image){ alert(captured_token); },
+            document_side: caracedula,
+            callback: function(captured_token, image){ caracedula == "front" ? document.getElementById("Tfront").value = captured_token : document.getElementById("Tback").value = captured_token },
             failure: function(error){ alert(error); }
         });
         } catch (error) {
@@ -27,8 +27,13 @@ const Home = () => {
             <div className="mb-3">
                 <label className="form-label">ID Sesion</label>
                 <input type="text" className="form-control" id="IdSesion" />
+                <label className="form-label">Token Front</label>
+                <input type="text" className="form-control" id="Tfront" />
+                <label className="form-label">Token Back</label>
+                <input type="text" className="form-control" id="Tback" />
             </div>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value)} className="btn btn-secondary">Captura Front</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-secondary">Captura Front</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"back")} className="btn btn-secondary">Captura Back</button>
         </form>    
     </div>
 
