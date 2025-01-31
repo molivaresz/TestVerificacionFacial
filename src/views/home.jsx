@@ -36,7 +36,7 @@ const Home = () => {
 
     return (
     <>
-    <div className='col container-fluid d-flex pt-5 ps-5'>
+    <div className='col container-fluid d-flex justify-content-evenly pt-5 ps-5'>
         <form>
             <div className="mb-3">
                 <h2>AUTOCAPTURA</h2>
@@ -47,8 +47,8 @@ const Home = () => {
                 <label className="form-label">Token Back</label>
                 <input type="text" className="form-control" id="Tback" />
             </div>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-outline-blue-800 m-2">Captura Front</button>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"back")} className="btn btn-outline-cyan-800">Captura Back</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"front")} className="btn btn-outline-Primary m-2">Captura Front</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("IdSesion").value,"back")} className="btn btn-outline-Warning">Captura Back</button>
         </form>    
         <form>
             <div className="mb-3">
@@ -58,7 +58,7 @@ const Home = () => {
                 <label className="form-label">Token Liveness</label>
                 <input type="text" className="form-control" id="Tliveness" />
             </div>
-            <button type="button" onClick={() => Selfie(document.getElementById("IdSesion").value)} className="btn btn-outline-green-800 m-2">Liveness</button>
+            <button type="button" onClick={() => Selfie(document.getElementById("IdSesion").value)} className="btn btn-outline-Info m-2">Liveness</button>
         </form>
     </div>
 
