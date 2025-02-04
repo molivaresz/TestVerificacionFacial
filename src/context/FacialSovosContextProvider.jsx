@@ -1,4 +1,4 @@
-import { createContext, useState} from "react";
+import { createContext} from "react";
 import axios from "axios";
 
 export const FacialSovosContext = createContext();
@@ -12,12 +12,24 @@ const FacialSovosContextProvider = ({ children }) => {
     // Obtiene sesion
     const SessionManager = async () => {
         try {
-            axios
-            .post(SESSIONMANAGER_URL + "/session-id", {"apiKey":"47335baad5434a5f80f108114e31dc00", "liveness":"true","autocapture": "true", "mode": "0", "fake_detector":"true"})
-            .then((response) => {
-                //setDataSessionManager(response.data);
-                console.log(response.data)
+            let bodyFormData = new FormData();
+            bodyFormData.append('apikey', '47335baad5434a5f80f108114e31dc00')
+            bodyFormData.append('liveness','true')
+            bodyFormData.append('autocapture','true')
+            bodyFormData.append('mode','0')
+            bodyFormData.append('fake_detector','true')
+
+            axios({
+                method: "post",
+                url: SESSIONMANAGER_URL + "/session-id",
+                data: bodyFormData,
+                headers: { "Content-Type": "multipart/form-data" },
+            })
+            .then(function (response) {
+                //handle success
+                console.log(response);
                 return response.data
+
             });
         } catch (error) {
             console.log(error);
