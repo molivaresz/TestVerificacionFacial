@@ -1,10 +1,7 @@
 import React from 'react'
-import { useContext } from 'react';
-import { FacialSovosContext } from '../context/FacialSovosContextProvider';
+
 
 const Home = () => {
-
-    const {SessionManager} = useContext(FacialSovosContext)
 
     const CapturaDoc = async (IdSesion,caracedula) => {
         try {
@@ -43,7 +40,6 @@ const Home = () => {
                 <h2>AUTOCAPTURA</h2>
                 <label className="form-label">ID Sesion</label>
                 <input type="text" className="form-control" id="IdSesion" />
-                <button type="button" onClick={() => SessionManager()} className="btn btn-outline-light m-2">ID Session</button>
                 <label className="form-label">Token Front</label>
                 <input type="text" className="form-control" id="Tfront" />
                 <label className="form-label">Token Back</label>
