@@ -29,7 +29,9 @@ const Home = () => {
                     { caracedula == "front" ? 
                         document.getElementById("Tfront").value = captured_token : 
                         document.getElementById("Tback").value = captured_token },
-                    failure: function(error){ alert(error); }
+                    failure: function(error){ alert(error); },
+                    alt_server: "https://prod-capture.tocws.com",
+                    url_lbac: "https://prod-api.7oc.cl/auto-capture/data/v2"
                 });
             }
         } catch (error) {
@@ -51,7 +53,9 @@ const Home = () => {
                     locale: "es",
                     session_id: IdSesion,
                     callback: function(liveness_token){ document.getElementById("Tliveness").value = liveness_token },
-                    failure: function(error){ alert(error); }
+                    failure: function(error){ alert(error); },
+                    alt_server: "https://prod-liveness.tocws.com",
+                    url_lbliv: "https://prod-api.7oc.cl/liveness/image-saver/v1"
                 });
             }
         } catch (error) {
