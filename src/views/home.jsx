@@ -6,7 +6,7 @@ const Home = () => {
     const CapturaDoc = async (env_facial,IdSesion,caracedula) => {
         try {
             alert("env_facial: " + env_facial)
-            if (env_facial == "sandbox") {
+            if (env_facial == "s") {
                 TOCautocapture('containerautocaptura', {
                     locale: "es",
                     session_id: IdSesion,
@@ -41,7 +41,7 @@ const Home = () => {
 
     const Selfie = async (env_facial,IdSesion) => {
         try {
-            if (env_facial == "sandbox") {
+            if (env_facial == "s") {
                 TOCliveness('containerautocaptura', {
                     locale: "es",
                     session_id: IdSesion,
@@ -69,10 +69,10 @@ const Home = () => {
     <div className='col container-fluid d-flex justify-content-evenly pt-5 ps-5'>
         <form>
             <div className="mb-3">
-                <input className="form-check-input" type="radio" id="envRadios" value="sandbox" checked />
-                <label className="form-check-label" for="envRadios1">Sandbox</label>
-                <input className="form-check-input" type="radio" id="envRadios" value="produccion" />
-                <label className="form-check-label" for="envRadios2">Produccion</label>
+                <select className="form-select" id='envselect'>
+                    <option value="s" selected>Sandbox</option>
+                    <option value="p">Produccion</option>
+                </select>            
             </div>
         </form>
         <form>
@@ -85,8 +85,8 @@ const Home = () => {
                 <label className="form-label">Token Back</label>
                 <input type="text" className="form-control" id="Tback" />
             </div>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("envRadios").value,document.getElementById("IdSesion").value,"front")} className="btn btn-outline-primary m-2">Captura Front</button>
-            <button type="button" onClick={() => CapturaDoc(document.getElementById("envRadios").value,document.getElementById("IdSesion").value,"back")} className="btn btn-outline-warning">Captura Back</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("envselect").value,document.getElementById("IdSesion").value,"front")} className="btn btn-outline-primary m-2">Captura Front</button>
+            <button type="button" onClick={() => CapturaDoc(document.getElementById("envselect").value,document.getElementById("IdSesion").value,"back")} className="btn btn-outline-warning">Captura Back</button>
         </form>    
         <form>
             <div className="mb-3">
@@ -94,7 +94,7 @@ const Home = () => {
                 <label className="form-label">Token Liveness</label>
                 <input type="text" className="form-control" id="Tliveness" />
             </div>
-            <button type="button" onClick={() => Selfie(document.getElementById("envRadios").value,document.getElementById("IdSesion").value)} className="btn btn-outline-info m-2">Liveness</button>
+            <button type="button" onClick={() => Selfie(document.getElementById("envselect").value,document.getElementById("IdSesion").value)} className="btn btn-outline-info m-2">Liveness</button>
         </form>
     </div>
 
