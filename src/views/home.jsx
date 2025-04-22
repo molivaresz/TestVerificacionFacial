@@ -5,7 +5,6 @@ const Home = () => {
 
     const CapturaDoc = async (env_facial,IdSesion,caracedula) => {
         try {
-            alert("env_facial: " + env_facial)
             if (env_facial == "s") {
                 TOCautocapture('containerautocaptura', {
                     locale: "es",
