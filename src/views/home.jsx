@@ -5,6 +5,7 @@ const Home = () => {
 
     const CapturaDoc = async (env_facial,IdSesion,caracedula) => {
         try {
+            alert("env_facial: " + env_facial)
             if (env_facial == "sandbox") {
                 TOCautocapture('containerautocaptura', {
                     locale: "es",
@@ -17,7 +18,6 @@ const Home = () => {
                         document.getElementById("Tback").value = captured_token },
                     failure: function(error){ alert(error); }
                 });
-
             } 
             else {
                 TOCautocapture('containerautocaptura', {
