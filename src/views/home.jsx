@@ -11,10 +11,10 @@ const Home = () => {
                     session_id: IdSesion,
                     document_type: "CHL2",
                     document_side: caracedula,
-                    callback: function(captured_token, image)
-                    { caracedula == "front" ? 
-                        document.getElementById("Tfront").value = captured_token : 
-                        document.getElementById("Tback").value = captured_token },
+                    callback: function(captured_token, image_token)
+                    {   caracedula == "front" ? document.getElementById("Tfront").value = captured_token : document.getElementById("Tback").value = captured_token;
+                        caracedula == "front" ? document.getElementById("Imgfront").value = image_token : document.getElementById("Imgback").value = image_token;
+                    },
                     failure: function(error){ alert(error); }
                 });
             } 
@@ -81,8 +81,12 @@ const Home = () => {
                 <input type="text" className="form-control" id="IdSesion" />
                 <label className="form-label">Token Front</label>
                 <input type="text" className="form-control" id="Tfront" />
+                <label className="form-label">Imagen Front</label>
+                <input type="text" className="form-control" id="Imgfront" />
                 <label className="form-label">Token Back</label>
                 <input type="text" className="form-control" id="Tback" />
+                <label className="form-label">Imagen Back</label>
+                <input type="text" className="form-control" id="Imgback" />
             </div>
             <button type="button" onClick={() => CapturaDoc(document.getElementById("envselect").value,document.getElementById("IdSesion").value,"front")} className="btn btn-outline-primary m-2">Captura Front</button>
             <button type="button" onClick={() => CapturaDoc(document.getElementById("envselect").value,document.getElementById("IdSesion").value,"back")} className="btn btn-outline-warning">Captura Back</button>
